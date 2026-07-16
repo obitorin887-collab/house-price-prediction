@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>House Price Prediction</title>
+
+<style>
+
+body{
+background:#f5f7fa;
+font-family:Arial;
+}
+
+.container{
+
+width:650px;
+margin:30px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 0 15px gray;
+
+}
+
+h1{
+
+text-align:center;
+color:#1f4e79;
+
+}
+
+input{
+
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:6px;
+border:1px solid gray;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+background:#007bff;
+color:white;
+font-size:18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#0056b3;
+
+}
+
+.result{
+
+text-align:center;
+font-size:25px;
+color:green;
+margin-top:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🏠 House Price Prediction</h1>
+
+<form action="/predict" method="POST">
+
+<input type="number" name="bedrooms" placeholder="Bedrooms" required>
+
+<input type="number" step="0.1" name="bathrooms" placeholder="Bathrooms" required>
+
+<input type="number" name="sqft_living" placeholder="Sqft Living" required>
+
+<input type="number" name="sqft_lot" placeholder="Sqft Lot" required>
+
+<input type="number" step="0.1" name="floors" placeholder="Floors" required>
+
+<input type="number" name="waterfront" placeholder="Waterfront (0 or 1)" required>
+
+<input type="number" name="view" placeholder="View" required>
+
+<input type="number" name="condition" placeholder="Condition" required>
+
+<input type="number" name="sqft_above" placeholder="Sqft Above" required>
+
+<input type="number" name="sqft_basement" placeholder="Sqft Basement" required>
+
+<input type="number" name="yr_built" placeholder="Year Built" required>
+
+<input type="number" name="yr_renovated" placeholder="Year Renovated" required>
+
+<input type="number" name="year" placeholder="Sale Year" required>
+
+<input type="number" name="month" placeholder="Sale Month" required>
+
+<button type="submit">Predict Price</button>
+
+</form>
+
+<div class="result">
+
+{{ prediction_text }}
+
+</div>
+
+</div>
+
+</body>
+
+</html>
